@@ -9,7 +9,7 @@ class Employee:abstractEmployee {
 public:
     string Name;
     string Company;
-    int Age;
+    int Age;    
     Employee(string name, string company, int age) {
         Name=name;
         Company=company;
@@ -21,6 +21,19 @@ public:
         } else {
             cout << Name << ", sorry no promotion for you!" << endl;
         }
+    }
+};
+
+class Developer:Employee {
+    string ProgrammingLanguage;
+public:
+    Developer(string name, string company, int age, string programmingLanguage)
+        : Employee(name, company, age) {
+        ProgrammingLanguage = programmingLanguage;
+        }
+
+    void fixCode() {
+        cout << Name << " is fixing code in " << ProgrammingLanguage << endl;
     }
 };
 
