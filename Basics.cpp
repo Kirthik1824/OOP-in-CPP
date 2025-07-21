@@ -5,7 +5,7 @@ class abstractEmployee {
 public:
     virtual void askForPromotion() = 0; // pure virtual function
 };
-class Employee {
+class Employee:abstractEmployee {
 public:
     string Name;
     string Company;
