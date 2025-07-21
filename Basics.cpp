@@ -5,6 +5,7 @@ class abstractEmployee {
 public:
     virtual void askForPromotion() = 0; // pure virtual function
 };
+
 class Employee:abstractEmployee {
 public:
     string Name;
@@ -24,7 +25,7 @@ public:
     }
 };
 
-class Developer:Employee {
+class Developer:public Employee {
     string ProgrammingLanguage;
 public:
     Developer(string name, string company, int age, string programmingLanguage)
@@ -41,4 +42,7 @@ int main () {
     Employee employee1=Employee("John", "Google", 35);
     employee1.askForPromotion();
     cout << "Employee Name: " << employee1.Name << endl;
+    Developer dev1 = Developer("Alice", "Microsoft", 28, "C++");
+    dev1.askForPromotion();
+    cout << "Developer Name: " << dev1.Name << endl;
 }
